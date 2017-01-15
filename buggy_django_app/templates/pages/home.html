@@ -22,6 +22,10 @@
         </li>
 
         <li>
+          A6: Sensitive data exposure. Debug mode is always set to true in Settings.py. Visiting the following URL reveals very sensitive information http://localhost:8000/__debug__/render_panel/.
+        </li>
+
+        <li>
           A7: Missing function level access control. Page http://localhost:8000/secret-info/ is exposed to all users.
         </li>
       </ul>
