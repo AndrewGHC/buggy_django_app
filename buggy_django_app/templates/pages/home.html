@@ -22,12 +22,15 @@
         </li>
 
         <li>
-          A6: Sensitive data exposure. Debug mode is always set to true in Settings.py. Visiting the following URL reveals very sensitive information http://localhost:8000/__debug__/render_panel/.
+          A5 + A6: Sensitive data exposure. Debug mode is always set to true in Settings.py. Visiting the following URL reveals very sensitive information http://localhost:8000/__debug__/render_panel/.
         </li>
 
         <li>
           A7: Missing function level access control. Page http://localhost:8000/secret-info/ is exposed to all users.
         </li>
+
+        <li>
+          A10: Unvalidated redirect. /redirect/{site} redirects to the site provided as a path (perhaps for clickthrough tracking or some other purpose). However, urls are not validated and any site may be input. E.g. localhost:8000/redirect/http://www.example.com/
       </ul>
     </div>
   </div>
