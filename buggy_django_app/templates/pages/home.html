@@ -14,15 +14,15 @@
       <h4>Vulnerabilities</h4>
       <ul>
         <li>
-          A1: Reflected XSS on this page. Run:
+          A3: Reflected XSS on this page. Run:
           <ul>
-            <li>Exploit: http://localhost:8000/?referral=Organic Food Store</li>
+            <li>Expected use: http://localhost:8000/?referral=Organic Food Store</li>
             <li>Exploit: http://localhost:8000/?referral="); alert("Whoops, reflected XSS attack!"); console.log("</li>
           </ul>
         </li>
 
         <li>
-          A5 + A6: Sensitive data exposure. Debug mode is always set to true in Settings.py. Visiting the following URL reveals very sensitive information http://localhost:8000/__debug__/render_panel/.
+          A5 + A6: Security misconfiguration leading to sensitive data exposure. Debug mode is always set to true in Settings.py. Visiting the following URL reveals very sensitive information http://localhost:8000/__debug__/render_panel/.
         </li>
 
         <li>
