@@ -13,11 +13,16 @@
 
       <h4>Vulnerabilities</h4>
       <ul>
-        <li>Reflected XSS on this page. Run:
+        <li>
+          A1: Reflected XSS on this page. Run:
           <ul>
             <li>Exploit: http://localhost:8000/?referral=Organic Food Store</li>
             <li>Exploit: http://localhost:8000/?referral="); alert("Whoops, reflected XSS attack!"); console.log("</li>
           </ul>
+        </li>
+
+        <li>
+          A7: Missing function level access control. Page http://localhost:8000/secret-info/ is exposed to all users.
         </li>
       </ul>
     </div>
@@ -30,7 +35,8 @@
     var referral = urlParams.get("referral");
     var stringToEval = 'alert("Thank you for visiting from ' + referral + '")';
 
-    eval(stringToEval);
+    if (urlParams.has('referral'))
+      eval(stringToEval);
   </script>
 
 </div>
