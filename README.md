@@ -6,8 +6,6 @@ An app with 5 vulnerabilities from the OWASP top 10 2013.
 
 ## Vulnerabilities
 
-A3: Reflected XSS on this page. Run:
-
 - A3: Reflected XSS on this page. Run:
 
   - Expected use: <http://localhost:8000/?referral=Organic> Food Store
@@ -22,3 +20,12 @@ A3: Reflected XSS on this page. Run:
 ## Install
 
 Boilerplate for this app was generated using [cookiecutter-django](https://github.com/pydanny/cookiecutter-django), and installation instructions are the same as [in their docs](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html).
+
+**Linux**
+
+1. `git clone https://github.com/AndrewGHC/buggy_django_app.git && cd buggy_django_app`
+2. `pip install -r requirements/local.txt`
+3. Create a new Postgresql table with `createdb buggy_django_app`
+4. `python manage.py migrate`
+5. `python managy.py runserver`
+6. Visit the site at <http://localhost:8000>
